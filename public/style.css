@@ -1,0 +1,17 @@
+.navBar {
+  background-color: rgb(236, 93, 93);
+  height: 4em;
+}
+.main {
+  background-color: rgb(81, 81, 182);
+  height: 25em;
+}
+.foot {
+  background-color: rgb(4, 4, 53);
+  height: 4em;
+}
+body {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
