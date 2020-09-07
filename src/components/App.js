@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Head from "../components/Head";
+import Home from "../components/Home";
+import Profile from "../components/Profile";
+import About from "../components/About";
 import imag from "../imag/yui.jpg";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -30,7 +34,7 @@ class App extends Component {
         ) : (
           <div>
             <Head
-              name="Asad"
+              name="User"
               status={this.state.loggedIn}
               logStatus={this.logStatus}
             />
@@ -47,12 +51,31 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <ul>
-          This is main site:
-          <li>Option 1 </li>
-          <li>Option 1 </li>
-          <li>Option 1 </li>
-        </ul>
+        <Router>
+          <ul>
+            This is main site:
+            <li>
+              <Link to="/Home">Home</Link>
+            </li>
+            <li>
+              <Link to="/Profile">Profile</Link>
+            </li>
+            <li>
+              <Link to="/About">About</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route exact path="/Home">
+              <Home />
+            </Route>
+            <Route path="/Profile">
+              <Profile />
+            </Route>
+            <Route path="/About">
+              <About />
+            </Route>
+          </Switch>
+        </Router>
         <img
           src={imag}
           alt="No Pic Found"
